@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
-import { Subscription } from "rxjs/Subscription";
-import { LocationManagerService } from "../shared/services/location-manager.service";
-import { PageComponent } from "../shared/page/page.component";
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+import { PageComponent } from '../../shared/page/page.component';
+import { LocationManagerService } from '../../../services/location-manager.service';
 
 @Component({
   selector: 'app-profile',

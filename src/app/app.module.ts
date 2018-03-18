@@ -4,20 +4,17 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { ModalComponent } from './shared/modal/modal.component';
-import { LocationManagerService } from "./shared/services/location-manager.service";
-import { ProfileComponent } from './profile/profile.component';
-import { PageComponent } from "./shared/page/page.component";
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { ModalComponent } from './components/shared/modal/modal.component';
+import { LocationManagerService } from "./services/location-manager.service";
+import { PageComponent } from "./components/shared/page/page.component";
+import {ProfileComponent} from "./components/main/profile/profile.component";
+import {HomeComponent} from "./components/main/home/home.component";
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'profile/:id', component: ProfileComponent },
-  { path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  }
 ];
 
 @NgModule({

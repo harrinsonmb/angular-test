@@ -1,6 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {LocationManagerService} from "../services/location-manager.service";
-import {ActivatedRoute, Router} from "@angular/router";
+import { Component, Input, OnInit } from '@angular/core';
+import { LocationManagerService } from '../../../services/location-manager.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -13,11 +13,11 @@ export class NavbarComponent implements OnInit {
   router: Router;
 
   constructor(_router: Router, private LocationManagerService: LocationManagerService, private route: ActivatedRoute) {
+    this.router = _router;
     this.LocationManagerService.onGetData.subscribe(res => {
       this.pageTitle = this.LocationManagerService.pageLocation;
       this.showBackButton = this.LocationManagerService.showBackButton;
-      this.router = _router;
-    })
+    });
   }
 
   ngOnInit() {}

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PageComponent } from "../shared/page/page.component";
+import { PageComponent } from '../../shared/page/page.component';
 
 @Component({
   selector: 'app-home',
