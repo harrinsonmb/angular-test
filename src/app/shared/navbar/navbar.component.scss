@@ -1,0 +1,17 @@
+#main-nav{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 100%;
+}
+
+.navbar{
+  &__title{
+    margin: 0;
+  }
+  &__wrapper{
+    display: flex;
+    justify-content: space-between;
+  }
+}
