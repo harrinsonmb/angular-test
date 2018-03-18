@@ -1,16 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import {LocationService} from "../shared/services/location-manager.service";
+import { Component } from '@angular/core';
+import { PageComponent } from "../shared/page/page.component";
+import IPage from "../shared/page/page.interface";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-  constructor(private LocationService: LocationService) {}
-
-  ngOnInit() {
-    this.LocationService.setData('Home');
-  }
-
+export class HomeComponent extends PageComponent{
+  pageTitle: string = 'Home page';
 }

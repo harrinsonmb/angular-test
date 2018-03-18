@@ -1,4 +1,12 @@
+@import "../mixins/utils";
+
 .btn{
   border: 0;
   background: none;
+}
+
+.btn--navbar{
+  .btn__text{
+    @include visually-hidden;
+  }
 }

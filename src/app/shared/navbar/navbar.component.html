@@ -1,13 +1,13 @@
 <nav id="main-nav">
   <div class="navbar__wrapper">
-    <button class="btn btn--navbar">
-      <span></span>
-      <span>Back</span>
+    <button class="btn btn--navbar" *ngIf="pageBack" (click)="goTo($event, pageBack)">
+      <span>&lt;</span>
+      <span class="btn__text">Go back</span>
     </button>
-    <h1 class="navbar__title">{{ title }}</h1>
+    <h1 class="navbar__title">{{ pageTitle }}</h1>
     <button class="btn btn--navbar">
-      <span></span>
-      <span>Menu</span>
+      <span>|||</span>
+      <span class="btn__text">Menu</span>
     </button>
   </div>
 </nav>
