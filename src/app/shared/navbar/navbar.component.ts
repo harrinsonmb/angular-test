@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {LocationManagerService} from "../services/location-manager.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar',
@@ -9,23 +9,21 @@ import {Router} from "@angular/router";
 })
 export class NavbarComponent implements OnInit {
   @Input() pageTitle:string = 'Default page';
-  @Input() pageBack:string = null;
+  @Input() showBackButton:boolean;
   router: Router;
 
-  constructor(_router: Router, private LocationManagerService: LocationManagerService) {
+  constructor(_router: Router, private LocationManagerService: LocationManagerService, private route: ActivatedRoute) {
     this.LocationManagerService.onGetData.subscribe(res => {
       this.pageTitle = this.LocationManagerService.pageLocation;
-      this.pageBack = this.LocationManagerService.pageBack;
+      this.showBackButton = this.LocationManagerService.showBackButton;
       this.router = _router;
     })
   }
 
   ngOnInit() {}
 
-  goTo(event, href){
-    this.router.navigate([href]).then( x => {
-      return x;
-    });
+  goBack(){
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 
 }

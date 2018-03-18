@@ -11,7 +11,7 @@ import { PageComponent } from "../shared/page/page.component";
 })
 export class ProfileComponent extends PageComponent{
   pageTitle:string = 'Profile page';
-  pageBack:string = '/home';
+  showBackButton:boolean = true;
   id:number;
   private sub:Subscription;
 

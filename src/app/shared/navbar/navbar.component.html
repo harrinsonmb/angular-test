@@ -1,6 +1,6 @@
 <nav id="main-nav">
   <div class="navbar__wrapper">
-    <button class="btn btn--navbar" *ngIf="pageBack" (click)="goTo($event, pageBack)">
+    <button class="btn btn--navbar" *ngIf="showBackButton" (click)="goBack()">
       <span>&lt;</span>
       <span class="btn__text">Go back</span>
     </button>

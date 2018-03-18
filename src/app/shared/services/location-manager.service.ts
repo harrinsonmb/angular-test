@@ -3,12 +3,12 @@ import {Injectable, EventEmitter} from "@angular/core";
 @Injectable()
 export class LocationManagerService {
   pageLocation:string;
-  pageBack:string;
+  showBackButton:boolean;
 
   onGetData = new EventEmitter<boolean>();
   setData(current, back) {
     this.pageLocation = current;
-    this.pageBack = back;
+    this.showBackButton = back;
     this.onGetData.emit(true);
   }
 }

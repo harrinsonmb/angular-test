@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import IPage from "./page.interface";
 import {LocationManagerService} from "../services/location-manager.service";
 
 @Component({
@@ -7,9 +6,9 @@ import {LocationManagerService} from "../services/location-manager.service";
   template: '',
   styles: ['']
 })
-export class PageComponent implements OnInit, IPage {
+export class PageComponent implements OnInit {
   pageTitle: string;
-  pageBack: string = null;
+  showBackButton: boolean = false;
   LocationManagerService: LocationManagerService;
 
   constructor(LocationManagerService: LocationManagerService) {
@@ -18,7 +17,7 @@ export class PageComponent implements OnInit, IPage {
 
   ngOnInit() {
     if(this.pageTitle && this.pageTitle !== ''){
-      this.LocationManagerService.setData(this.pageTitle, this.pageBack);
+      this.LocationManagerService.setData(this.pageTitle, this.showBackButton);
     }else{
       console.error("You have to define a name for the current page", this);
     }
