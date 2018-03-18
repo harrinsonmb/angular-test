@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageComponent } from './page.component';
+import { LocationManagerService } from "../services/location-manager.service";
 
 describe('PageComponent', () => {
   let component: PageComponent;
@@ -8,7 +9,8 @@ describe('PageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageComponent ]
+      declarations: [ PageComponent ],
+      providers : [ LocationManagerService ]
     })
     .compileComponents();
   }));

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { PageComponent } from "../shared/page/page.component";
-import IPage from "../shared/page/page.interface";
 
 @Component({
   selector: 'app-home',
