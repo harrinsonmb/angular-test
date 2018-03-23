@@ -7,11 +7,10 @@ import { LocationManagerService } from '../../../services/location-manager.servi
   styles: ['']
 })
 export class PageComponent implements OnInit {
-  pageTitle: string;
-  showBackButton: boolean = false;
-  LocationManagerService: LocationManagerService;
+  protected pageTitle: string;
+  protected showBackButton: boolean = false;
 
-  constructor(LocationManagerService: LocationManagerService) {
+  constructor(private LocationManagerService: LocationManagerService) {
     this.LocationManagerService = LocationManagerService;
   }
 

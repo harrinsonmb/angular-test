@@ -10,9 +10,9 @@ import { LocationManagerService } from '../../../services/location-manager.servi
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent extends PageComponent{
-  pageTitle:string = 'Profile page';
-  showBackButton:boolean = true;
-  id:number;
+  protected pageTitle:string = 'Profile page';
+  protected showBackButton:boolean = true;
+  protected id:number;
   private sub:Subscription;
 
   constructor(LocationManagerService: LocationManagerService, private route: ActivatedRoute){

@@ -1,0 +1,8 @@
+<ul *ngIf="profiles.length">
+  <li *ngFor="let profile of profiles">
+    <app-profile-thumbnail [profileUser]="profile"></app-profile-thumbnail>
+  </li>
+</ul>
+<div *ngIf="!profiles.length">
+  Sorry, there's any profile to show!
+</div>

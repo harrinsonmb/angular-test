@@ -1,5 +1,2 @@
-<p>
-  home works!
-  <a [routerLink]="['/profile', 1]">Link</a>
-</p>
-
+<input title="Número de elementos a mostrar" type="number" [(ngModel)]="elementsNumber" (ngModelChange)="updateProfiles()" [min]="0">
+<app-profile-list [profiles]="profiles"></app-profile-list>
