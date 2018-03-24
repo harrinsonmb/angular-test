@@ -21,6 +21,7 @@ export const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'profile/:id', component: ProfileComponent },
+  { path: '**', redirectTo: 'home' },
 ];
 
 @NgModule({
@@ -38,7 +39,7 @@ export const appRoutes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(
-      appRoutes, {}
+      appRoutes, {useHash: true}
     ),
     HttpClientModule,
     FormsModule

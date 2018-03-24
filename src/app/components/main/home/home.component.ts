@@ -12,7 +12,7 @@ import { ProfileManagerService } from '../../../services/profile-manager.service
 export class HomeComponent extends PageComponent{
   @Input() elementsNumber:number = 10;
   protected pageTitle: string = 'Home page';
-  protected profiles: Brastlewark [];
+  profiles: Brastlewark [];
   protected profileList: Brastlewark [];
 
   constructor(private locationService: LocationManagerService, private configService:ProfileManagerService){

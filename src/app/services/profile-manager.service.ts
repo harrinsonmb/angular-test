@@ -37,4 +37,15 @@ export class ProfileManagerService {
     });
     return brastlewark || null;
   }
+
+  getBrastlewarkListByNames(friendsNames:string []):Brastlewark[]{
+    let friendsList:Brastlewark[] = [];
+    for(let index in friendsNames){
+      let currentProfile = this.brastlewarkList.find( profile => {
+        return profile.name === friendsNames[index];
+      });
+      friendsList.push(currentProfile);
+    }
+    return friendsList;
+  }
 }

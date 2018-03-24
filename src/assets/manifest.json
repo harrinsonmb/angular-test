@@ -1,0 +1,13 @@
+{
+  "short_name": "Angular TEST",
+  "name": "Angular Creatures",
+  "start_url": "/home",
+  "background_color": "#2e5057",
+  "display": "standalone",
+  "theme_color": "#2e5057",
+  "icons": [{
+    "src": "./images/creatures.png",
+    "sizes": "894x894",
+    "type": "image/png"
+  }]
+}
