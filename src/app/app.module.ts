@@ -16,6 +16,7 @@ import { ProfileFullComponent } from './components/shared/profile-full/profile-f
 import { ProfileManagerService } from './services/profile-manager.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ImageAdjustDirective } from './directives/image-adjust.directive';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -34,7 +35,8 @@ export const appRoutes: Routes = [
     PageComponent,
     ProfileThumbnailComponent,
     ProfileListComponent,
-    ProfileFullComponent
+    ProfileFullComponent,
+    ImageAdjustDirective
   ],
   imports: [
     BrowserModule,

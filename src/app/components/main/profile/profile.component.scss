@@ -1,0 +1,51 @@
+@import "../../../../scss/mixins/utils";
+.profile{
+  &__image-container{
+    &:after, &:before{
+      position: relative;
+      content: ' ';
+      height: 1rem;
+      display: block;
+    }
+  }
+
+  &__image-wrapper{
+    border: 2px solid color(bittersweet);
+    @include image-border();
+    img{
+      &.image--landscape{
+        @include image-fit(landscape);
+      }
+      &.image--portrait{
+        @include image-fit(portrait);
+      }
+    }
+    @include mq(mobile){
+      @include image-border(16rem);
+    };
+    @include mq(tablet){
+      @include image-border(17rem);
+    };
+    @include mq(desktop){
+      @include image-border(18rem);
+    };
+  }
+}
+
+
+
+.details{
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+
+  dd{
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}

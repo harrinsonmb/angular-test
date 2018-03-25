@@ -1,3 +1,7 @@
+@import "../variables/layout";
+@import "../variables/colors";
+@import "../variables/typography";
+
 @mixin visually-hidden(){
   position:absolute;
   left:-10000px;
@@ -5,4 +9,53 @@
   width:1px;
   height:1px;
   overflow:hidden;
+}
+
+/* Mobile first rule */
+@mixin mq($device){
+  @media screen and (min-width: map_get($breakpoints, #{$device})){
+    @content
+  }
+}
+
+@mixin image-border($size: 11rem){
+  border-radius: $size;
+  height: $size;
+  margin: 0 auto;
+  max-height: $size;
+  overflow: hidden;
+  width: $size;
+}
+
+@mixin image-fit($mode){
+  position: relative;
+  display: block;
+
+  @if($mode == portrait){
+    height: auto;
+    margin-top: -50%;
+    top: 25%;
+    width: 100%;
+  }@else if($mode: landscape){
+    margin-left: -50%;
+    height: 100%;
+    left: 25%;
+    width: auto;
+  }
+}
+
+@function color($color-name:red){
+  @if map_has_key($colors, #{$color-name}){
+    @return map_get($colors, #{$color-name});
+  }  @else{
+    @return red;
+  }
+}
+
+@function font-weight($weight-name){
+  @if map_has_key($font-weight, #{$weight-name}){
+    @return map_get($font-weight, #{$weight-name});
+  }  @else{
+    @return 400;
+  }
 }

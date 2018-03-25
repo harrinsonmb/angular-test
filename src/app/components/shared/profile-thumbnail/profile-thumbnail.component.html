@@ -1,19 +1,19 @@
 <div>
   <a [routerLink]="['/profile', profileUser.id]">Visit profile</a>
   <div>
-    <img src="{{profileUser.thumbnail}}" alt="Imagen de perfil">
+    <img src="{{profileUser.thumbnail}}" alt="{{profileUser.name}}'s profile image" appImageAdjust>
   </div>
   <div>
     <dl>
-      <dt>Nombre</dt>
+      <dt>Name</dt>
       <dd>{{profileUser.name}}</dd>
-      <dt>Edad</dt>
-      <dd>{{profileUser.age}}</dd>
-      <dt>Peso</dt>
-      <dd>{{profileUser.weight}} KG.</dd>
-      <dt>Altura</dt>
-      <dd>{{profileUser.height}}</dd>
-      <dt>Color de pelo</dt>
+      <dt>Age</dt>
+      <dd>{{profileUser.age}} years old</dd>
+      <dt>Weight</dt>
+      <dd>{{profileUser.weight | number : '1.2-2'}} kg</dd>
+      <dt>Height</dt>
+      <dd>{{profileUser.height | number : '1.2-2'}} cms</dd>
+      <dt>Hair color</dt>
       <dd>{{profileUser.hair_color}}</dd>
     </dl>
   </div>

@@ -1,2 +1,10 @@
-$navbar-height: 2rem;
+$navbar-height: 3rem;
 $grid-space: 0.5rem;
+
+$breakpoints: (
+  tiny: 26rem,  // 416px
+  mobile: 46rem,  // 736 px
+  tablet: 48rem,  // 768 px
+  desktop: 61rem, // 976 px
+  wide: 71rem     // 1136 px
+);

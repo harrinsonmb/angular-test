@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import "scss/variables/layout";
+@import "~flexboxgrid-sass";
 
 @import "scss/modules/layout";
 @import "scss/modules/buttons";
 @import "scss/modules/utils";
+@import "scss/modules/lists";

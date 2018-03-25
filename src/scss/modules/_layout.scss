@@ -1,4 +1,10 @@
+@import "../variables/layout";
+@import "../mixins/utils";
+
 body{
   margin: 0;
   padding: calc(#{$navbar-height} + #{$grid-space}) 0 0;
+  background-color: color(white_smoke);
+  font-family: 'Quicksand', sans-serif;;
+  font-weight: font-weight(regular);
 }

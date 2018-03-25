@@ -1,18 +1,23 @@
-<div>
-  <img src="{{profileUser.thumbnail}}" alt="Imagen de perfil">
-</div>
-<div>
-  <dl>
-    <dt>Nombre</dt>
-    <dd>{{profileUser.name}}</dd>
-    <dt>Edad</dt>
-    <dd>{{profileUser.age}}</dd>
-    <dt>Peso</dt>
-    <dd>{{profileUser.weight}} KG.</dd>
-    <dt>Altura</dt>
-    <dd>{{profileUser.height}}</dd>
-    <dt>Color de pelo</dt>
-    <dd>{{profileUser.hair_color}}</dd>
-  </dl>
-</div>
-<app-profile-list [profiles]="friendsList"></app-profile-list>
+<article class="row profile middle-sm">
+  <div class="col-xs-12 col-sm-6 profile__image-container">
+    <div class="profile__image-wrapper">
+      <img src="{{profileUser.thumbnail}}" alt="{{profileUser.name}}'s profile image" appImageAdjust>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-6 details__wrapper">
+    <h2>{{profileUser.name}}</h2>
+    <dl class="details row">
+      <dt class="col-xs-5 col-sm-4">Age</dt>
+      <dd class="col-xs-7 col-sm-8">{{profileUser.age}} years old</dd>
+      <dt class="col-xs-5 col-sm-4">Weight</dt>
+      <dd class="col-xs-7 col-sm-8">{{profileUser.weight | number : '1.2-2'}} kg</dd>
+      <dt class="col-xs-5 col-sm-4">Height</dt>
+      <dd class="col-xs-7 col-sm-8">{{profileUser.height| number : '1.2-2'}} cms</dd>
+      <dt class="col-xs-5 col-sm-4">Hair color</dt>
+      <dd class="col-xs-7 col-sm-8">{{profileUser.hair_color}}</dd>
+    </dl>
+  </div>
+</article>
+<footer>
+  <app-profile-list [profiles]="friendsList"></app-profile-list>
+</footer>
