@@ -8,3 +8,8 @@ $breakpoints: (
   desktop: 61rem, // 976 px
   wide: 71rem     // 1136 px
 );
+
+$z-index: (
+  default: 0,
+  link: 1
+)

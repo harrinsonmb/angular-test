@@ -10,3 +10,14 @@
     @include visually-hidden;
   }
 }
+
+.link--absolute{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: z-index(link);
+  border: solid 1px color(eastern_blue);
+  background-color: rgba(color(eastern_blue), 0.1)
+}

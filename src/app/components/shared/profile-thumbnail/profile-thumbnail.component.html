@@ -1,20 +1,23 @@
-<div>
-  <a [routerLink]="['/profile', profileUser.id]">Visit profile</a>
-  <div>
-    <img src="{{profileUser.thumbnail}}" alt="{{profileUser.name}}'s profile image" appImageAdjust>
+<div class="row thumbnail middle-sm">
+  <a [routerLink]="['/profile', profileUser.id]" class="link--absolute">
+    <span class="visually-hidden">Visit {{profileUser.name}}'s profile</span>
+  </a>
+  <div class="col-xs-4 col-sm-5 profile__image-container">
+    <div class="profile__image-wrapper">
+      <img src="{{profileUser.thumbnail}}" alt="{{profileUser.name}}'s profile image" appImageAdjust>
+    </div>
   </div>
-  <div>
-    <dl>
-      <dt>Name</dt>
-      <dd>{{profileUser.name}}</dd>
-      <dt>Age</dt>
-      <dd>{{profileUser.age}} years old</dd>
-      <dt>Weight</dt>
-      <dd>{{profileUser.weight | number : '1.2-2'}} kg</dd>
-      <dt>Height</dt>
-      <dd>{{profileUser.height | number : '1.2-2'}} cms</dd>
-      <dt>Hair color</dt>
-      <dd>{{profileUser.hair_color}}</dd>
+  <div class="col-xs-8 col-sm-7">
+    <h3 class="details__name">{{profileUser.name}}</h3>
+    <dl class="details row">
+      <dt class="col-xs-5 col-sm-4">Age</dt>
+      <dd class="col-xs-7 col-sm-8">{{profileUser.age}} years old</dd>
+      <dt class="col-xs-5 col-sm-4">Weight</dt>
+      <dd class="col-xs-7 col-sm-8">{{profileUser.weight | number : '1.2-2'}} kg</dd>
+      <dt class="col-xs-5 col-sm-4">Height</dt>
+      <dd class="col-xs-7 col-sm-8">{{profileUser.height | number : '1.2-2'}} cms</dd>
+      <dt class="col-xs-5 col-sm-4">Hair color</dt>
+      <dd class="col-xs-7 col-sm-8">{{profileUser.hair_color}}</dd>
     </dl>
   </div>
 </div>

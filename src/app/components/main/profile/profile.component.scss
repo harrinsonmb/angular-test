@@ -10,24 +10,15 @@
   }
 
   &__image-wrapper{
-    border: 2px solid color(bittersweet);
-    @include image-border();
-    img{
-      &.image--landscape{
-        @include image-fit(landscape);
-      }
-      &.image--portrait{
-        @include image-fit(portrait);
-      }
-    }
+    @include image-radius-border();
     @include mq(mobile){
-      @include image-border(16rem);
+      @include image-radius-border(16rem);
     };
     @include mq(tablet){
-      @include image-border(17rem);
+      @include image-radius-border(17rem);
     };
     @include mq(desktop){
-      @include image-border(18rem);
+      @include image-radius-border(18rem);
     };
   }
 }

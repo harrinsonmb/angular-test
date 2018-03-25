@@ -1,7 +1,7 @@
 {
   "short_name": "Angular TEST",
   "name": "Angular Creatures",
-  "start_url": "/home",
+  "start_url": "/#/home",
   "background_color": "#0de29b",
   "display": "standalone",
   "theme_color": "#0de29b",

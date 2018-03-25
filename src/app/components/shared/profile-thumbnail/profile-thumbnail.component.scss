@@ -1,0 +1,40 @@
+@import "../../../../scss/mixins/utils";
+.thumbnail{
+  position: relative;
+  margin: 0 0 1rem;
+  .profile{
+    &__image-container{
+      &:after, &:before{
+        position: relative;
+        content: ' ';
+        height: 1rem;
+        display: block;
+      }
+    }
+
+    &__image-wrapper{
+      @include image-radius-border(3rem);
+      @include mq(mobile){
+        @include image-radius-border(5rem);
+      };
+      @include mq(tablet){
+        @include image-radius-border(6rem);
+      };
+      @include mq(desktop){
+        @include image-radius-border(8rem);
+      };
+    }
+  }
+
+  .details{
+    font-size: font-size(extra-small);
+    dd{
+      margin-left: 0;
+      margin-bottom: 5px;
+    }
+    &__name{
+      font-size: font-size(small);
+      text-decoration: underline;
+    }
+  }
+}

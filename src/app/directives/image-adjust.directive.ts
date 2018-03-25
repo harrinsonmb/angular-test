@@ -19,9 +19,9 @@ export class ImageAdjustDirective {
       } else if (img.clientWidth < img.clientHeight){
         finalClass = 'image--portrait';
       }
-      img.classList.add(finalClass);
+      img.classList.remove('image--landscape', 'image--portrait');
+      img.classList.toggle(finalClass);
     };
-
   }
 }
 

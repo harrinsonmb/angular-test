@@ -1,0 +1,10 @@
+@import "../mixins/utils";
+
+img{
+  &.image--landscape{
+    @include image-fit(landscape);
+  }
+  &.image--portrait{
+    @include image-fit(portrait);
+  }
+}

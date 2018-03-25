@@ -18,7 +18,7 @@
   }
 }
 
-@mixin image-border($size: 11rem){
+@mixin image-radius-border($size: 11rem){
   border-radius: $size;
   height: $size;
   margin: 0 auto;
@@ -57,5 +57,21 @@
     @return map_get($font-weight, #{$weight-name});
   }  @else{
     @return 400;
+  }
+}
+
+@function font-size($size-name){
+  @if map_has_key($font-size, #{$size-name}){
+    @return map_get($font-size, #{$size-name});
+  }  @else{
+    @return 16px;
+  }
+}
+
+@function z-index($index-name){
+  @if map_has_key($z-index, #{$index-name}){
+    @return map_get($z-index, #{$index-name});
+  }  @else{
+    @return 16px;
   }
 }
