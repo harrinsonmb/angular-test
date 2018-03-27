@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { PageComponent } from '../../shared/page/page.component';
 import { LocationManagerService } from '../../../services/location-manager.service';
-import {Brastlewark} from "../../../models/Brastlewark";
 import {ProfileManagerService} from "../../../services/profile-manager.service";
+import Brastlewark from "../../../models/Brastlewark";
 
 @Component({
   selector: 'app-profile',

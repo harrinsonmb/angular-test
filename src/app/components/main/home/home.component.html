@@ -1,2 +1,52 @@
-<input title="Número de elementos a mostrar" type="number" [(ngModel)]="elementsNumber" (ngModelChange)="updateProfiles()" [min]="0">
+<form name="filters">
+  <div class="row">
+    <label for="profileName">Brastlewark's name</label>
+    <input id="profileName" name="profileName" type="text" [(ngModel)]="profileName" (ngModelChange)="applyFilters({attrName: 'name', query: {filterWord: profileName}})">
+  </div>
+  <div class="hidden-dynamic">
+    <div class="row">
+      <div class="col-xs-6">
+        <app-range-input [modelName]="'age'" [minModel]="minAge" [maxModel]="maxAge" (getFilteredList)="applyFilters($event)"></app-range-input>
+      </div>
+      <div class="col-xs-6">
+        <app-range-input [modelName]="'weight'" [minModel]="minWeight" [maxModel]="maxWeight" (getFilteredList)="applyFilters($event)"></app-range-input>
+      </div>
+      <div class="col-xs-6">
+        <app-range-input [modelName]="'height'" [minModel]="minHeight" [maxModel]="maxHeight" (getFilteredList)="applyFilters($event)"></app-range-input>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div>Hair color</div>
+        <button>Select tales</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div>Professions</div>
+        <button>Select tales</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <label for="order-by">Order by</label>
+    <select id="order-by">
+      <option value="">Select any value</option>
+    </select>
+  </div>
+  <div class="row center-xs">
+    <div class="col-xs-6">
+      <button type="reset">Borrar datos</button>
+    </div>
+    <div class="col-xs-6">
+      <button>
+        Show more/Hide filters
+      </button>
+    </div>
+  </div>
+</form>
 <app-profile-list [profiles]="profiles"></app-profile-list>
+<div>
+  <label for="elementsNumber">Número de elementos a mostrar</label>
+  <input id="elementsNumber" name="elementsNumber" type="number" [(ngModel)]="elementsNumber" [min]="0">
+</div>

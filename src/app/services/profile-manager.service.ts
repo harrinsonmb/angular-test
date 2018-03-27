@@ -1,7 +1,7 @@
-import { EventEmitter, Injectable, Output } from '@angular/core';
+import {  Injectable, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Brastlewark } from '../models/Brastlewark';
-import {ReplaySubject} from "rxjs/ReplaySubject";
+import { ReplaySubject } from "rxjs/ReplaySubject";
+import Brastlewark from '../models/Brastlewark';
 
 @Injectable()
 export class ProfileManagerService {

@@ -1,4 +1,4 @@
-export class Brastlewark{
+export default class Brastlewark{
   id:number;
   name:string;
   thumbnail:string;

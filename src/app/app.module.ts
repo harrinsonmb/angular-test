@@ -13,6 +13,7 @@ import { HomeComponent } from './components/main/home/home.component';
 import { ProfileThumbnailComponent } from './components/shared/profile-thumbnail/profile-thumbnail.component';
 import { ProfileListComponent } from './components/shared/profile-list/profile-list.component';
 import { ProfileFullComponent } from './components/shared/profile-full/profile-full.component';
+import { RangeInputComponent } from './components/shared/range-input/range-input.component';
 import { ProfileManagerService } from './services/profile-manager.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -36,7 +37,8 @@ export const appRoutes: Routes = [
     ProfileThumbnailComponent,
     ProfileListComponent,
     ProfileFullComponent,
-    ImageAdjustDirective
+    ImageAdjustDirective,
+    RangeInputComponent
   ],
   imports: [
     BrowserModule,

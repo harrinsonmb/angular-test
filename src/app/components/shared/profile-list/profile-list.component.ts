@@ -1,5 +1,5 @@
 import {Component, Input, OnInit } from '@angular/core';
-import { Brastlewark } from '../../../models/Brastlewark';
+import Brastlewark from '../../../models/Brastlewark';
 
 @Component({
   selector: 'app-profile-list',
