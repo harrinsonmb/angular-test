@@ -25,6 +25,7 @@ export class HomeComponent extends PageComponent implements AfterContentInit{
 
   protected pageTitle: string = 'Home page';
   protected profileList: Brastlewark [];
+  protected filteredProfiles: Brastlewark [];
   filters: any;
   profiles: Brastlewark [];
 
@@ -85,5 +86,10 @@ export class HomeComponent extends PageComponent implements AfterContentInit{
       filteredProfiles = currentFilter.getFilteredList(filteredProfiles, {attrName:filterAttr, query: filterQuery});
     }
     this.profiles = filteredProfiles.slice(0, this.elementsNumber);
+    this.filteredProfiles = filteredProfiles;
+  }
+
+  slice(){
+    this.profiles = this.filteredProfiles.slice(0, this.elementsNumber);
   }
 }

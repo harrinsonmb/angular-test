@@ -1,7 +1,9 @@
 <form name="filters">
   <div class="row">
-    <label for="profileName">Brastlewark's name</label>
-    <input id="profileName" name="profileName" type="text" [(ngModel)]="profileName" (ngModelChange)="applyFilters({attrName: 'name', query: {filterWord: profileName}})">
+    <div class="col-xs-12">
+      <label for="profileName">Brastlewark's name</label>
+      <input id="profileName" name="profileName" type="text" [(ngModel)]="profileName" (ngModelChange)="applyFilters({attrName: 'name', query: {filterWord: profileName}})">
+    </div>
   </div>
   <div class="hidden-dynamic">
     <div class="row">
@@ -29,10 +31,12 @@
     </div>
   </div>
   <div class="row">
-    <label for="order-by">Order by</label>
-    <select id="order-by">
-      <option value="">Select any value</option>
-    </select>
+    <div class="col-xs-12">
+      <label for="order-by">Order by</label>
+      <select id="order-by">
+        <option value="">Select any value</option>
+      </select>
+    </div>
   </div>
   <div class="row center-xs">
     <div class="col-xs-6">
@@ -48,5 +52,13 @@
 <app-profile-list [profiles]="profiles"></app-profile-list>
 <div>
   <label for="elementsNumber">Número de elementos a mostrar</label>
-  <input id="elementsNumber" name="elementsNumber" type="number" [(ngModel)]="elementsNumber" [min]="0">
+  <input id="elementsNumber" name="elementsNumber" type="number" [(ngModel)]="elementsNumber" (ngModelChange)="slice()" [min]="0">
 </div>
+
+<ul>
+  <li><a href="">|<</a></li>
+  <li><a href="">2</a></li>
+  <li><input type="number" [value]="3"></li>
+  <li><a href="">4</a></li>
+  <li><a href="">>|</a></li>
+</ul>
