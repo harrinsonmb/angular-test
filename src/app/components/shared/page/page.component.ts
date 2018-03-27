@@ -7,7 +7,7 @@ import { LocationManagerService } from '../../../services/location-manager.servi
   styles: ['']
 })
 export class PageComponent implements OnInit {
-  protected pageTitle: string;
+  pageTitle: string;
   protected showBackButton: boolean = false;
 
   constructor(private LocationManagerService: LocationManagerService) {

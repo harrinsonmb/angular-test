@@ -14,10 +14,19 @@
     font-weight: font-weight(regular);
     line-height: $navbar-height;
     margin: 0;
+    text-align: center;
+    margin: 0 auto;
   }
   &__wrapper{
     display: flex;
     height: 100%;
-    justify-content: space-between;
+  }
+}
+
+.btn--navbar{
+  min-width: 30px;
+  font-weight: bold;
+  & + .navbar__title{
+    padding-right: 30px;
   }
 }

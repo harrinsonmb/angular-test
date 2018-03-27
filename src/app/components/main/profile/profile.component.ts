@@ -12,7 +12,7 @@ import Brastlewark from "../../../models/Brastlewark";
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent extends PageComponent{
-  protected pageTitle:string = 'Profile page';
+  pageTitle:string = 'Profile page';
   protected showBackButton:boolean = true;
   private sub:Subscription;
   profileUser: Brastlewark;

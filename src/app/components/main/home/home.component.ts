@@ -28,7 +28,7 @@ export class HomeComponent extends PageComponent implements AfterContentInit{
   @Input() currentPage:number = 1;
   @Input() totalPages:number;
 
-  protected pageTitle: string = 'Home page';
+  pageTitle: string = 'Home page';
   protected profileList: Brastlewark [];
   protected filteredProfiles: Brastlewark [];
   protected sub: Subscription;
