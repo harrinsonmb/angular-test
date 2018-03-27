@@ -21,7 +21,8 @@ import { ImageAdjustDirective } from './directives/image-adjust.directive';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  { path: 'home', component: HomeComponent},
+  { path: 'home/:id', component: HomeComponent},
   { path: 'profile/:id', component: ProfileComponent },
   { path: '**', redirectTo: 'home' },
 ];

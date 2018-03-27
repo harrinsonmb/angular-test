@@ -1,0 +1,26 @@
+.list--pagination{
+    margin-top: 8px;
+    padding-left: 0;
+    .list__item{
+        display: inline;
+        margin: 4px;
+    }
+    .list__input{
+        text-align: center;
+        max-width: 3em;
+    }
+}
+
+.slice{
+    text-align: center;
+    &__input, &__label{
+        display: block;
+    }
+    &__input{
+        margin: 8px auto 0;
+    }
+}
+
+.form__block{
+    margin-bottom: 1rem;
+}

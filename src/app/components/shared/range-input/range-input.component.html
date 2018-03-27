@@ -1,5 +1,11 @@
-<span>Select min and max {{modelName}}</span>
-<label for="minModel" class="visually-hidden">Select the min {{modelName}}</label>
-<input id="minModel" name="minModel" type="number" [(ngModel)]="minModel" [maxlength]="4" [min]="0" [max]="maxModel" (ngModelChange)="filterList( modelName, {filterMin: minModel, filterMax: maxModel})">
-<label for="maxModel" class="visually-hidden">Select the max {{modelName}}</label>
-<input id="maxModel" name="maxModel" type="number" [(ngModel)]="maxModel" [maxlength]="4" [min]="maxModel" (ngModelChange)="filterList( modelName, {filterMin: minModel, filterMax: maxModel})">
+<div class="row">    
+    <div class="col-xs-12 form__label">Select min and max {{modelName}}</div>
+    <div class="col-xs-6">
+        <label for="minModel" class="visually-hidden">Select the min {{modelName}}</label>
+        <input id="minModel" placeholder="Write the min {{modelName}}" name="minModel" type="number" [(ngModel)]="minModel" [maxlength]="4" [min]="0" [max]="maxModel" (ngModelChange)="filterList( modelName, {filterMin: minModel, filterMax: maxModel})">
+    </div>
+    <div class="col-xs-6">   
+        <label for="maxModel" class="visually-hidden">Select the max {{modelName}}</label>
+        <input id="maxModel" placeholder="Write the max {{modelName}}"name="maxModel" type="number" [(ngModel)]="maxModel" [maxlength]="4" [min]="maxModel" (ngModelChange)="filterList( modelName, {filterMin: minModel, filterMax: maxModel})">                
+    </div>
+</div>

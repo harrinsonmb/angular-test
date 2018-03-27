@@ -1,23 +1,22 @@
 <form name="filters">
   <div class="row">
-    <div class="col-xs-12">
-      <label for="profileName">Brastlewark's name</label>
-      <input id="profileName" name="profileName" type="text" [(ngModel)]="profileName" (ngModelChange)="applyFilters({attrName: 'name', query: {filterWord: profileName}})">
-    </div>
-  </div>
-  <div class="hidden-dynamic">
-    <div class="row">
-      <div class="col-xs-6">
+    <div class="col-xs-6 form__block">
+      <label for="profileName" class="form__label">Brastlewark's name</label>
+      <input id="profileName" placeholder="Write the name" name="profileName" type="text" [(ngModel)]="profileName" (ngModelChange)="applyFilters({attrName: 'name', query: {filterWord: profileName}})">
+    </div><div class="col-xs-6 form__block">
         <app-range-input [modelName]="'age'" [minModel]="minAge" [maxModel]="maxAge" (getFilteredList)="applyFilters($event)"></app-range-input>
       </div>
-      <div class="col-xs-6">
+  </div>
+  <div class="hidden-dynamic">
+    <div class="row">      
+      <div class="col-xs-6 form__block">
         <app-range-input [modelName]="'weight'" [minModel]="minWeight" [maxModel]="maxWeight" (getFilteredList)="applyFilters($event)"></app-range-input>
       </div>
-      <div class="col-xs-6">
+      <div class="col-xs-6 form__block">
         <app-range-input [modelName]="'height'" [minModel]="minHeight" [maxModel]="maxHeight" (getFilteredList)="applyFilters($event)"></app-range-input>
       </div>
     </div>
-    <div class="row">
+    <!-- <div class="row">
       <div class="col-xs-12">
         <div>Hair color</div>
         <button>Select tales</button>
@@ -28,37 +27,43 @@
         <div>Professions</div>
         <button>Select tales</button>
       </div>
-    </div>
+    </div> -->
   </div>
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-xs-12">
       <label for="order-by">Order by</label>
       <select id="order-by">
         <option value="">Select any value</option>
       </select>
     </div>
-  </div>
-  <div class="row center-xs">
+  </div> -->
+  <!-- <div class="row center-xs">
     <div class="col-xs-6">
-      <button type="reset">Borrar datos</button>
+      <button type="reset" class="btn">Borrar datos</button>
     </div>
     <div class="col-xs-6">
       <button>
         Show more/Hide filters
       </button>
     </div>
-  </div>
+  </div> -->
 </form>
 <app-profile-list [profiles]="profiles"></app-profile-list>
-<div>
-  <label for="elementsNumber">Número de elementos a mostrar</label>
-  <input id="elementsNumber" name="elementsNumber" type="number" [(ngModel)]="elementsNumber" (ngModelChange)="slice()" [min]="0">
+<div class="row center-xs">
+  <div class="col-xs-12 col-sm-6">
+    <label for="paginador">Paginador</label>
+    <ul class="list--pagination">
+      <li class="list__item" *ngIf="currentPage > 2"><a [routerLink]="['/home', 1 ]"> << </a></li>
+      <li class="list__item" *ngIf="currentPage > 1"><a [routerLink]="['/home', currentPage-1 ]">{{currentPage-1}}</a></li>
+      <li class="list__item"><input class="list__input" id="paginador" name="paginador" type="number" [(ngModel)]="currentPage" [min]="1" [max]="totalPages" (ngModelChange)="updateView()"></li>
+      <li class="list__item" *ngIf="currentPage < totalPages"><a [routerLink]="['/home', currentPage+1 ]">{{currentPage+1}}</a></li>
+      <li class="list__item" *ngIf="currentPage < totalPages-1"><a [routerLink]="['/home', totalPages]"> >> </a></li>
+    </ul>
+  </div>  
+  <div class="col-xs-12 col-sm-6">
+    <div class="slice">
+        <label for="elementsNumber" class="slice__label">Número de elementos a mostrar</label>
+        <input id="elementsNumber" class="slice__input input--width-auto" name="elementsNumber" type="number" [(ngModel)]="elementsNumber" (ngModelChange)="slice()" [min]="0">
+    </div>
+  </div>
 </div>
-
-<ul>
-  <li><a href="">|<</a></li>
-  <li><a href="">2</a></li>
-  <li><input type="number" [value]="3"></li>
-  <li><a href="">4</a></li>
-  <li><a href="">>|</a></li>
-</ul>

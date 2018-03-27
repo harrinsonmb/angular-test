@@ -7,6 +7,8 @@ import FormFilterString from "../../../models/FormFilterString";
 import FormFilterRange from "../../../models/FormFilterRange";
 import FormFilter from "../../../models/FormFilter";
 import FormFilterArray from "../../../models/FormFilterArray";
+import { Subscription } from 'rxjs/Subscription';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -23,13 +25,17 @@ export class HomeComponent extends PageComponent implements AfterContentInit{
   @Input() minWeight:number = null;
   @Input() maxWeight:number = null;
 
+  @Input() currentPage:number = 1;
+  @Input() totalPages:number;
+
   protected pageTitle: string = 'Home page';
   protected profileList: Brastlewark [];
   protected filteredProfiles: Brastlewark [];
+  protected sub: Subscription;
   filters: any;
   profiles: Brastlewark [];
 
-  constructor(private locationService: LocationManagerService, private configService:ProfileManagerService){
+  constructor(private locationService: LocationManagerService, private route: ActivatedRoute, private configService:ProfileManagerService){
     super(locationService);
     this.filters = [];
   }
@@ -39,6 +45,15 @@ export class HomeComponent extends PageComponent implements AfterContentInit{
     this.configService.onGetData.subscribe( res => {
       this.profileList = this.configService.getBrastlewarkList();
       this.profiles = this.profileList.slice(0, this.elementsNumber);
+      this.totalPages =  Math.floor(this.profileList.length/this.elementsNumber)+1;
+      this.filteredProfiles = this.profileList;
+    });
+    this.sub = this.route.params
+      .subscribe(params => {
+        if(params['id']){
+          this.currentPage = +params['id'];
+          this.updateView();
+        }
     });
   }
 
@@ -87,9 +102,19 @@ export class HomeComponent extends PageComponent implements AfterContentInit{
     }
     this.profiles = filteredProfiles.slice(0, this.elementsNumber);
     this.filteredProfiles = filteredProfiles;
+    this.totalPages =  Math.floor(this.filteredProfiles.length/this.elementsNumber)+1;
   }
 
   slice(){
     this.profiles = this.filteredProfiles.slice(0, this.elementsNumber);
   }
+  
+  updateView(){
+    let initialPage = this.currentPage-1
+    if(initialPage > 0){
+      initialPage = this.currentPage * this.elementsNumber - this.elementsNumber;
+    }
+    this.profiles = this.filteredProfiles.slice(initialPage, initialPage+this.elementsNumber);
+  }
+
 }
