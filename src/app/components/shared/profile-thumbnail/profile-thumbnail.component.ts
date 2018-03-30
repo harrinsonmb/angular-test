@@ -7,7 +7,7 @@ import Brastlewark from '../../../models/Brastlewark';
   styleUrls: ['./profile-thumbnail.component.scss']
 })
 export class ProfileThumbnailComponent implements OnInit {
-  @Input() profileUser:Brastlewark;
+  @Input() profileUser: Brastlewark;
 
   constructor() {
   }

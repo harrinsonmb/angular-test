@@ -10,6 +10,8 @@ import {APP_BASE_HREF, Location} from "@angular/common";
 import {appRoutes} from "./app.module";
 import {HomeComponent} from "./components/main/home/home.component";
 import {ProfileComponent} from "./components/main/profile/profile.component";
+import {FormsModule} from '@angular/forms';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -26,11 +28,15 @@ describe('AppComponent', () => {
         HomeComponent,
         ProfileComponent
       ],
-      imports: [ RouterTestingModule.withRoutes(appRoutes), ],
+      imports: [
+        FormsModule,
+        RouterTestingModule.withRoutes(appRoutes),
+      ],
       providers : [
         LocationManagerService,
         { provide: APP_BASE_HREF, useValue : '/'  }
-      ]
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
   beforeEach(() => {

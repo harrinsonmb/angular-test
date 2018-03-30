@@ -1,4 +1,4 @@
-<div class="row thumbnail middle-sm">
+<div class="row thumbnail middle-sm" *ngIf="profileUser">
   <a [routerLink]="['/profile', profileUser.id]" class="link--absolute">
     <span class="visually-hidden">Visit {{profileUser.name}}'s profile</span>
   </a>

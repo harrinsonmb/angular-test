@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RangeInputComponent } from './range-input.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('RangeInputComponent', () => {
   let component: RangeInputComponent;
@@ -8,7 +9,8 @@ describe('RangeInputComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RangeInputComponent ]
+      declarations: [ RangeInputComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

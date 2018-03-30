@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfileListComponent } from './profile-list.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('ProfileListComponent', () => {
   let component: ProfileListComponent;
@@ -8,7 +9,8 @@ describe('ProfileListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileListComponent ]
+      declarations: [ ProfileListComponent ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

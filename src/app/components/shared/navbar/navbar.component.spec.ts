@@ -4,6 +4,8 @@ import { NavbarComponent } from './navbar.component';
 import { LocationManagerService } from '../../../services/location-manager.service';
 import { HomeComponent } from '../../main/home/home.component';
 import { ProfileComponent } from '../../main/profile/profile.component';
+import {FormsModule} from '@angular/forms';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('NavbarComponent', () => {
   let fixture: ComponentFixture<NavbarComponent>;
@@ -19,7 +21,8 @@ describe('NavbarComponent', () => {
       providers : [
         LocationManagerService,
       ],
-      imports: [ RouterTestingModule ]
+      imports: [ RouterTestingModule, FormsModule ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
   beforeEach(() => {

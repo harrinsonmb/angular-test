@@ -1,8 +1,8 @@
-<ul *ngIf="profiles.length" class="list--profiles row">
+<ul *ngIf="profiles" class="list--profiles row">
   <li *ngFor="let profile of profiles" class="list__item col-xs-12 col-sm-6">
     <app-profile-thumbnail [profileUser]="profile"></app-profile-thumbnail>
   </li>
 </ul>
-<div *ngIf="!profiles.length">
+<div *ngIf="!profiles">
   Sorry, there's any profile to show!
 </div>

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProfileFullComponent } from './profile-full.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('ProfileFullComponent', () => {
   let component: ProfileFullComponent;
@@ -8,7 +9,8 @@ describe('ProfileFullComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProfileFullComponent ]
+      declarations: [ ProfileFullComponent ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));
