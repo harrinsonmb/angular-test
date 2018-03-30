@@ -1,18 +1,19 @@
 <form name="filters">
   <div class="row">
-    <div class="col-xs-6 form__block">
+    <div class="col-xs-12 col-sm-6 form__block">
       <label for="profileName" class="form__label">Brastlewark's name</label>
       <input id="profileName" placeholder="Write the name" name="profileName" type="text" [(ngModel)]="profileName" (ngModelChange)="applyFilters({attrName: 'name', query: {filterWord: profileName}})">
-    </div><div class="col-xs-6 form__block">
-        <app-range-input [modelName]="'age'" [minModel]="minAge" [maxModel]="maxAge" (getFilteredList)="applyFilters($event)"></app-range-input>
-      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6 form__block">
+      <app-range-input [modelName]="'age'" [minModel]="minAge" [maxModel]="maxAge" (getFilteredList)="applyFilters($event)"></app-range-input>
+    </div>
   </div>
   <div class="hidden-dynamic">
-    <div class="row">      
-      <div class="col-xs-6 form__block">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 form__block">
         <app-range-input [modelName]="'weight'" [minModel]="minWeight" [maxModel]="maxWeight" (getFilteredList)="applyFilters($event)"></app-range-input>
       </div>
-      <div class="col-xs-6 form__block">
+      <div class="col-xs-12 col-sm-6 form__block">
         <app-range-input [modelName]="'height'" [minModel]="minHeight" [maxModel]="maxHeight" (getFilteredList)="applyFilters($event)"></app-range-input>
       </div>
     </div>
@@ -59,7 +60,7 @@
       <li class="list__item" *ngIf="currentPage < totalPages"><a [routerLink]="['/home', currentPage+1 ]">{{currentPage+1}}</a></li>
       <li class="list__item" *ngIf="currentPage < totalPages-1"><a [routerLink]="['/home', totalPages]"> >> </a></li>
     </ul>
-  </div>  
+  </div>
   <div class="col-xs-12 col-sm-6">
     <div class="slice">
         <label for="elementsNumber" class="slice__label">Número de elementos a mostrar</label>
