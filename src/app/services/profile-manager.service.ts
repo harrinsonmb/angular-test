@@ -16,6 +16,8 @@ export class ProfileManagerService {
         this.brastlewarkList = <Brastlewark[]> result['Brastlewark'];
         localStorage.setItem('Brastlewark', JSON.stringify(this.brastlewarkList));
         this.onGetData.next(true);
+      }, err => {
+        console.log(err);
       });
     }else{
       this.brastlewarkList = <Brastlewark[]> JSON.parse(localStorage.getItem('Brastlewark'));

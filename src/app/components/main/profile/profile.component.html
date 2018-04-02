@@ -1,4 +1,4 @@
-<article class="row profile middle-sm">
+<article class="row profile middle-sm" *ngIf="profileUser">
   <div class="col-xs-12 col-sm-6 profile__image-container">
     <div class="profile__image-wrapper">
       <img src="{{profileUser.thumbnail}}" alt="{{profileUser.name}}'s profile image" appImageAdjust>
