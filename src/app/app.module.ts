@@ -18,11 +18,12 @@ import { ProfileManagerService } from './services/profile-manager.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ImageAdjustDirective } from './directives/image-adjust.directive';
+import {LoginComponent} from './components/main/login/login.component';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent},
-  { path: 'home/:id', component: HomeComponent},
   { path: 'profile/:id', component: ProfileComponent },
   { path: '**', redirectTo: 'home' },
 ];
@@ -39,7 +40,8 @@ export const appRoutes: Routes = [
     ProfileListComponent,
     ProfileFullComponent,
     ImageAdjustDirective,
-    RangeInputComponent
+    RangeInputComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

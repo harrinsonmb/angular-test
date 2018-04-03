@@ -8,7 +8,7 @@ import FormFilterRange from "../../../models/FormFilterRange";
 import FormFilter from "../../../models/FormFilter";
 import FormFilterArray from "../../../models/FormFilterArray";
 import { Subscription } from 'rxjs/Subscription';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -35,8 +35,8 @@ export class HomeComponent extends PageComponent implements AfterContentInit{
   filters: any;
   profiles: Brastlewark [];
 
-  constructor(private locationService: LocationManagerService, private route: ActivatedRoute, private configService:ProfileManagerService){
-    super(locationService);
+  constructor(router:Router, private locationService: LocationManagerService, private route: ActivatedRoute, private configService:ProfileManagerService){
+    super(router, locationService);
     this.filters = [];
   }
 
@@ -108,7 +108,7 @@ export class HomeComponent extends PageComponent implements AfterContentInit{
   slice(){
     this.profiles = this.filteredProfiles.slice(0, this.elementsNumber);
   }
-  
+
   updateView(){
     let initialPage = this.currentPage-1
     if(initialPage > 0){

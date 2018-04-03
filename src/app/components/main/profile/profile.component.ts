@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { PageComponent } from '../../shared/page/page.component';
 import { LocationManagerService } from '../../../services/location-manager.service';
@@ -18,8 +18,8 @@ export class ProfileComponent extends PageComponent{
   profileUser: Brastlewark;
   friendsList: Brastlewark [];
 
-  constructor(LocationManagerService: LocationManagerService, private route: ActivatedRoute, private profileManager: ProfileManagerService){
-    super(LocationManagerService);
+  constructor(router:Router, LocationManagerService: LocationManagerService, private route: ActivatedRoute, private profileManager: ProfileManagerService){
+    super(router, LocationManagerService);
   }
 
   ngOnInit() {

@@ -12,6 +12,7 @@ import {HomeComponent} from "./components/main/home/home.component";
 import {ProfileComponent} from "./components/main/profile/profile.component";
 import {FormsModule} from '@angular/forms';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {LoginComponent} from './components/main/login/login.component';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
@@ -26,7 +27,8 @@ describe('AppComponent', () => {
         NavbarComponent,
         ModalComponent,
         HomeComponent,
-        ProfileComponent
+        ProfileComponent,
+        LoginComponent
       ],
       imports: [
         FormsModule,
