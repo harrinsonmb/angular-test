@@ -23,4 +23,9 @@ This project is based in 4 main views (Login, Home and Profile).
 
 All these views are Page component type, inside these pages there are shared components.
 
-For login, use the string *user* as the username and *pass* as the password 
+## Login credentials:
+
+Username: **user**
+
+Password: **pass**
+  
