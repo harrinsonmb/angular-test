@@ -32,3 +32,6 @@ Username: **user**
 
 Password: **pass**
   
+## PWA version
+
+[Custom version with caching](https://github.com/harrinsonmb/angular-test/tree/PWA "Angular Creatures - Progressive Web Application")
