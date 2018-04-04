@@ -19,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ImageAdjustDirective } from './directives/image-adjust.directive';
 import {LoginComponent} from './components/main/login/login.component';
+import {environment} from "../environments/environment.prod";
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 export const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -46,11 +48,15 @@ export const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       appRoutes, {useHash: true}
     ),
-    HttpClientModule,
-    FormsModule
+    ServiceWorkerModule.register(
+      '/ngsw-worker.js',
+      {enabled: environment.production}
+    )
   ],
   providers: [
     LocationManagerService,

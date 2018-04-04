@@ -5,7 +5,7 @@ import Brastlewark from '../models/Brastlewark';
 
 @Injectable()
 export class ProfileManagerService {
-  configUrl:string = 'https://raw.githubusercontent.com/rrafols/mobile_test/master/data.json';
+  configUrl:string = 'https://raw.githubusercontent.com/harrinsonmb/angular-test/PWA/src/assets/data.json';
   @Output() onGetData = new ReplaySubject<boolean>();
   brastlewarkList: Brastlewark[];
 

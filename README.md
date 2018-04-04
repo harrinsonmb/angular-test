@@ -32,3 +32,10 @@ Username: **user**
 
 Password: **pass**
   
+## Performance test
+
+![Performance results](src/assets/images/performance.jpg "Performance test results")
+
+## Production environment
+
+[Production link](https://creatures.corleonevitoria.com)
