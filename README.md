@@ -8,18 +8,21 @@ This is a test for show my skills with Angular
 
 - npm start
 
-## Run tests
+## Run unit tests
 
 - npm test
 
+## Run e2e tests
+
+- npm run-script e2e
+
 ## Build project
 
-- npm build
-
+- npm run-script build
 
 ## Project
 
-This project is based in 4 main views (Login, Home and Profile).
+This project is based in 3 main views (Login, Home and Profile).
 
 All these views are Page component type, inside these pages there are shared components.
 

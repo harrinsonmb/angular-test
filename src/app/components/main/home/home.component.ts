@@ -50,8 +50,8 @@ export class HomeComponent extends PageComponent implements AfterContentInit{
     });
     this.sub = this.route.params
       .subscribe(params => {
-        if(params['id']){
-          this.currentPage = +params['id'];
+        if(params['page']){
+          this.currentPage = +params['page'];
           this.updateView();
         }
     });
@@ -92,6 +92,7 @@ export class HomeComponent extends PageComponent implements AfterContentInit{
    * and modifies the profiles list
    */
   applyFilters(params){
+    /* FIXME update pagination when filters are modified*/
     let filterAttr = params.attrName;
     let filterQuery = params.query;
     let filteredProfiles = this.profileList;

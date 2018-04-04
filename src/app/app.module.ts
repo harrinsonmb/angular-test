@@ -24,6 +24,7 @@ export const appRoutes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent},
   { path: 'home', component: HomeComponent},
+  { path: 'home/:page', component: HomeComponent},
   { path: 'profile/:id', component: ProfileComponent },
   { path: '**', redirectTo: 'home' },
 ];

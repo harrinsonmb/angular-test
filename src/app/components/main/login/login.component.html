@@ -3,7 +3,7 @@
   <input id="userName" name="userName" type="text" ngModel placeholder="Write your username" required/>
   <label for="password">Password:</label>
   <input id="password" name="password" type="password" ngModel placeholder="Write your password" required/>
-  <input type="submit" value="Login" aria-label="Press for login"/>
+  <input type="submit" id="submit" name="submit" value="Login" aria-label="Press for login"/>
 </form>
 <div role="alert" *ngIf="loginError">
   <p>The written credentials are not valid, please, try again.</p>
